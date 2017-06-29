@@ -43,7 +43,16 @@ def convert_mesh():
   armature = bpy.data.objects['Armature']
 
   # Rename to root
-  armature.name = 'root'
+  # armature.name = 'root'
+  # Create the root bone
+  bpy.ops.object.mode_set(mode="EDIT")
+  for bone in armature.data.edit_bones:
+    if bone.parent == None:
+      hip_bone = bone
+      break
+  root_bone = armature.data.edit_bones.new('root')
+  root_bone.tail = hip_bone.head
+  hip_bone.parent = root_bone
 
   return armature
 
