@@ -39,12 +39,10 @@ def run_blender_command(file_type, input_file, out_dir):
     print("Error: " + input_file)
 
 
-'''
 # Convert all animation fbx files
 print("Converting animations...")
 for file in glob.glob(os.path.join(anim_dir, "*.fbx")):
   run_blender_command("anim", file, anim_out_dir)
-'''
 
 # Convert all mesh fbx files
 print("Converting meshes...")

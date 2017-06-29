@@ -1,3 +1,7 @@
+'''
+Adds root bones to mesh / animation FBX files from Mixamo.
+'''
+
 import math
 import os
 import bpy
